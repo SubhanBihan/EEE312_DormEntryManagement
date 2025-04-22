@@ -1,0 +1,31 @@
+suppose, we get 80 frames from a sample. so we get a 36 X 80 feature matrix.
+
+mfcc feature matrix is 12X80 in dimension.
+
+purpose of the files:
+
+project_mfcc : this is the most crucial function. analyze this one. you will understand the flow of how the processing is done.
+
+vqvq: this file produces the VQ database, ei file tar flow bujhio.
+
+framing: outputs overlapping frames from the input speech. ekhane silence removing kora hoi nai. so, this is not used finally. however, uncomment the commented lines and run it. the output plot is helpful for finding threshold of selecting frames.
+
+silence_remover: this function divides the input speech in frames and keeps only
+those that have energy more than threshold.
+
+
+mel_bank: returns the triangular filter banks. each row is a filter.
+
+pre_emphasis (of speech): google this
+
+
+vqsplit: does the vector quatization
+
+delta.m: function that calculates the delta coefficients of the 12X80 matrix. will return a 12X80 matrix of delta coeffs. put this 12X80 matrix agian
+into the function and you will get 12X80 deltadelta coeffs.
+
+
+my_dist: calculates the distortion between a VQ matrix and a feature matrix.
+
+disteu: a function that is called by my_dist.m
+   

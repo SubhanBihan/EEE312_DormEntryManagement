@@ -1,0 +1,25 @@
+Each person has 10 ID and 10 Name samples.
+For profile building keep 6 samples of ID and 6 samples of NAME of each person in tran_ids and train_names respectivley.
+The rest 4 samples of ID and 4 samples of NAME of each person in test_ids and test_names respectivley.
+
+for VQ matrix extraction:
+
+vqvq.m ---> project_mfcc.m --->(inside project_mfcc) ----> pre_emphasis.m 
+---> silence_remover.m ---> framing.m ---> use my_fft.m for fourier transform
+---> take MEL filter from mel_bank.m ---> get MFCC coeffs ---> delta.m ---> return to vqvq.m ----> vqsplit.m ----> save VQ matrices
+
+same for ID and name speech samples.
+VQ matrix extraction for speech samples done.
+This is profile building for the people who will be included in our databse.
+The samples are taken from tran_ids and train_names folder
+
+Now for testing, we do same extraction for speech from test_ids and test_names folder.
+
+FOr live testing: go to vqlivetest.m
+take a test speech sample by live recording ----> pre_emphasis.m ---> silence_remover.m ---> framing.m ---> use my_fft.m for fourier transform
+---> take MEL filter from mel_bank.m ---> get MFCC coeffs ---> my_dist.m ---> disteu.m
+
+
+
+
+
